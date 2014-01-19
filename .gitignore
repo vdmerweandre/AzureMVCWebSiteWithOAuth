@@ -41,6 +41,9 @@ local.properties
 *.user
 *.sln.docstates
 
+DeploymentScripts/azuremvcsiteoauth.publishsettings
+DeploymentScripts/website-environment.xml
+
 # Build results
 
 [Dd]ebug/

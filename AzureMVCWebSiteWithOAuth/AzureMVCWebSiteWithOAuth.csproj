@@ -164,13 +164,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201401171016533_Initial.cs" />
-    <Compile Include="Migrations\201401171016533_Initial.Designer.cs">
-      <DependentUpon>201401171016533_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201401171116265_Added HomeTown and BirthDate to user accounts..cs" />
-    <Compile Include="Migrations\201401171116265_Added HomeTown and BirthDate to user accounts..Designer.cs">
-      <DependentUpon>201401171116265_Added HomeTown and BirthDate to user accounts..cs</DependentUpon>
+    <Compile Include="Migrations\201401181438472_Initial.cs" />
+    <Compile Include="Migrations\201401181438472_Initial.Designer.cs">
+      <DependentUpon>201401181438472_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -188,6 +184,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\azuremvcsiteoauth - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\azuremvcsiteoauth - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\AzureMVCWebSiteWithOAuth.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -243,11 +241,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201401171016533_Initial.resx">
-      <DependentUpon>201401171016533_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201401171116265_Added HomeTown and BirthDate to user accounts..resx">
-      <DependentUpon>201401171116265_Added HomeTown and BirthDate to user accounts..cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201401181438472_Initial.resx">
+      <DependentUpon>201401181438472_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -5,6 +5,16 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMVCWebSiteWithOAuth", "AzureMVCWebSiteWithOAuth\AzureMVCWebSiteWithOAuth.csproj", "{E6F4077B-582D-431E-97EE-31D4015EC953}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeploymentScripts", "DeploymentScripts", "{A16E03D1-A768-4C3B-9B6D-C787FF3DF926}"
+	ProjectSection(SolutionItems) = preProject
+		DeploymentScripts\New-AzureSQLDB.ps1 = DeploymentScripts\New-AzureSQLDB.ps1
+		DeploymentScripts\New-AzureStorageAccount.ps1 = DeploymentScripts\New-AzureStorageAccount.ps1
+		DeploymentScripts\New-AzureWebsiteEnv.ps1 = DeploymentScripts\New-AzureWebsiteEnv.ps1
+		DeploymentScripts\Publish-AzureWebsite.ps1 = DeploymentScripts\Publish-AzureWebsite.ps1
+		DeploymentScripts\pubxml.template = DeploymentScripts\pubxml.template
+		DeploymentScripts\website-environment.template = DeploymentScripts\website-environment.template
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -38,6 +38,8 @@ namespace AzureMVCWebSiteWithOAuth.Migrations
                         UserName = c.String(),
                         PasswordHash = c.String(),
                         SecurityStamp = c.String(),
+                        HomeTown = c.String(),
+                        BirthDate = c.DateTime(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id);

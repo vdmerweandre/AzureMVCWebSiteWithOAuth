@@ -13,7 +13,7 @@ namespace AzureMVCWebSiteWithOAuth.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201401171016533_Initial"; }
+            get { return "201401181438472_Initial"; }
         }
         
         string IMigrationMetadata.Source
