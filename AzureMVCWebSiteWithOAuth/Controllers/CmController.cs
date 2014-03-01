@@ -12,7 +12,7 @@ namespace AzureMVCWebSiteWithOAuth.Controllers
 {
     public class CmController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ContactsDbContext db = new ContactsDbContext();
 
         // GET: /Cm/
         [AllowAnonymous]
@@ -28,7 +28,7 @@ namespace AzureMVCWebSiteWithOAuth.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contact contact = db.Contacts.Find(id);
+            ContactViewModel contact = db.Contacts.Find(id);
             if (contact == null)
             {
                 return HttpNotFound();
@@ -49,7 +49,7 @@ namespace AzureMVCWebSiteWithOAuth.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "canEdit")]
-        public ActionResult Create([Bind(Include="ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
+        public ActionResult Create([Bind(Include = "ContactId,Name,Address,City,State,Zip,Email")] ContactViewModel contact)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +69,7 @@ namespace AzureMVCWebSiteWithOAuth.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contact contact = db.Contacts.Find(id);
+            ContactViewModel contact = db.Contacts.Find(id);
             if (contact == null)
             {
                 return HttpNotFound();
@@ -83,7 +83,7 @@ namespace AzureMVCWebSiteWithOAuth.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "canEdit")]
-        public ActionResult Edit([Bind(Include="ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
+        public ActionResult Edit([Bind(Include = "ContactId,Name,Address,City,State,Zip,Email")] ContactViewModel contact)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace AzureMVCWebSiteWithOAuth.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contact contact = db.Contacts.Find(id);
+            ContactViewModel contact = db.Contacts.Find(id);
             if (contact == null)
             {
                 return HttpNotFound();
@@ -116,7 +116,7 @@ namespace AzureMVCWebSiteWithOAuth.Controllers
         [Authorize(Roles = "canEdit")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Contact contact = db.Contacts.Find(id);
+            ContactViewModel contact = db.Contacts.Find(id);
             db.Contacts.Remove(contact);
             db.SaveChanges();
             return RedirectToAction("Index");

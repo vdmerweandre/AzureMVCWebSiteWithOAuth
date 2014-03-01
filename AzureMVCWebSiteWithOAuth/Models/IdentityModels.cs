@@ -10,13 +10,13 @@ namespace AzureMVCWebSiteWithOAuth.Models
         public DateTime? BirthDate { get; set; }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ContactsDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public ContactsDbContext()
             : base("DefaultConnection")
         {
         }
 
-        public System.Data.Entity.DbSet<AzureMVCWebSiteWithOAuth.Models.Contact> Contacts { get; set; }
+        public System.Data.Entity.DbSet<AzureMVCWebSiteWithOAuth.Models.ContactViewModel> Contacts { get; set; }
     }
 }

@@ -15,6 +15,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeploymentScripts", "Deploy
 		DeploymentScripts\website-environment.template = DeploymentScripts\website-environment.template
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{381B91F4-AA9F-4C6E-84A9-17402BDDD892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{A1469706-8360-4EBF-B629-6DC8F91222EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureRaceDataWebAPI.Tests", "AzureRaceDataAPI.Tests\AzureRaceDataWebAPI.Tests.csproj", "{C0F03412-A7C7-4641-B70A-7E6D27AFBEEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureRaceDataWebAPI", "AzureRaceDataWepAPI\AzureRaceDataWebAPI.csproj", "{F74DB69D-01BA-4ADB-B927-A88D5BA43D5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSPAWithOAuth", "AzureSPAWithOAuth\AzureSPAWithOAuth.csproj", "{DB030AE8-4160-4656-933A-EF86C6763DCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,8 +35,31 @@ Global
 		{E6F4077B-582D-431E-97EE-31D4015EC953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6F4077B-582D-431E-97EE-31D4015EC953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6F4077B-582D-431E-97EE-31D4015EC953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{381B91F4-AA9F-4C6E-84A9-17402BDDD892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381B91F4-AA9F-4C6E-84A9-17402BDDD892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381B91F4-AA9F-4C6E-84A9-17402BDDD892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381B91F4-AA9F-4C6E-84A9-17402BDDD892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1469706-8360-4EBF-B629-6DC8F91222EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1469706-8360-4EBF-B629-6DC8F91222EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1469706-8360-4EBF-B629-6DC8F91222EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1469706-8360-4EBF-B629-6DC8F91222EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F03412-A7C7-4641-B70A-7E6D27AFBEEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F03412-A7C7-4641-B70A-7E6D27AFBEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F03412-A7C7-4641-B70A-7E6D27AFBEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F03412-A7C7-4641-B70A-7E6D27AFBEEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F74DB69D-01BA-4ADB-B927-A88D5BA43D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74DB69D-01BA-4ADB-B927-A88D5BA43D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74DB69D-01BA-4ADB-B927-A88D5BA43D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74DB69D-01BA-4ADB-B927-A88D5BA43D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB030AE8-4160-4656-933A-EF86C6763DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB030AE8-4160-4656-933A-EF86C6763DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB030AE8-4160-4656-933A-EF86C6763DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB030AE8-4160-4656-933A-EF86C6763DCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal
