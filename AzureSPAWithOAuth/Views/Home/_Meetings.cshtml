@@ -1,0 +1,85 @@
+﻿
+<h2>Meetings</h2>
+
+<div class="content">
+    <!-- ko with: meetings -->
+    <div class="float-left">
+        <table id="update-meeting" data-bind="visible: meetings().length>0" border="0" class="table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">Id</th>
+                    <th style="width: 20%;">Venue</th>
+                    <th style="width: 30%;">Date</th>
+                    <th style="width: 5%;">RGB</th>
+                    <th style="width: 5%;">#Races</th>
+                    <th style="width: 5%;">TABCode</th>
+                    <th style="width: 5%;">TABDisp</th>
+                    <th style="width: 5%;">TabLtdCode</th>
+                    <th style="width: 5%;">TabLtdDisp</th>
+                    <th style="width: 5%;">UniTABCode</th>
+                    <th style="width: 5%;">UniTABDisp</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: {data: meetings}">
+                <tr>
+                    <!-- ko if: $data.editing || $data.new -->
+                    <td><span data-bind="text: Id"></span></td>
+                    <td><input type="text" size="20" data-bind="value: VenueName" /></td>
+                    <td><input type="text" size="20" id="datepicker" data-bind="value: Date" /></td>
+                    <td><input type="text" size="3" data-bind="value: RGB" /></td>
+                    <td><input type="number" width="3" min="1" max="999" data-bind="value: NumberOfRace" /></td>
+                    <td><input type="text" size="3" data-bind="value: TabcorpReqCode" /></td>
+                    <td><input type="text" size="3" data-bind="value: TabcorpDispCode" /></td>
+                    <td><input type="text" size="3" data-bind="value: TabLtdReqCode" /></td>
+                    <td><input type="text" size="3" data-bind="value: TabLtdReqDispCode" /></td>
+                    <td><input type="text" size="3" data-bind="value: UniTABReqCode" /></td>
+                    <td><input type="text" size="3" data-bind="value: UniTABReqDispCode" /></td>
+                        <!-- ko if: $data.new -->
+                        <td><input id="createMeeting" type="button" class="btn btn-primary btn-medium" value="Add" data-bind="visible: $data.new, click: $parent.create" /></td>
+                        <td><input type="button" class="btn btn-primary btn-medium" value="Cancel" data-bind="visible: $data.new, click: $parent.cancel" /></td>
+                        <!-- /ko -->
+                        <!-- ko ifnot: $data.new -->
+                        <td><input type="button" class="btn btn-primary btn-medium" value="Save" data-bind="hidden: $data.new, click: $data.save" /></td>
+                        <td><input type="button" class="btn btn-primary btn-medium" value="Cancel" data-bind="hidden: $data.new, click: $data.cancel" /></td>
+                        <!-- /ko -->
+                    <!-- /ko -->
+                    <!-- ko ifnot: $data.editing -->
+                    <td><span data-bind="text: Id"></span></td>
+                    <td><span data-bind="text: VenueName"></span></td>
+                    <td><span data-bind="text: Date"></span></td>
+                    <td><span data-bind="text: RGB"></span></td>
+                    <td><span data-bind="text: NumberOfRace"></span></td>
+                    <td><span data-bind="text: TabcorpReqCode"></span></td>
+                    <td><span data-bind="text: TabcorpDispCode"></span></td>
+                    <td><span data-bind="text: TabLtdReqCode"></span></td>
+                    <td><span data-bind="text: TabLtdReqDispCode"></span></td>
+                    <td><span data-bind="text: UniTABReqCode"></span></td>
+                    <td><span data-bind="text: UniTABReqDispCode"></span></td>
+                    <td><input id="editMeeting" type="button" class="btn btn-primary btn-medium" value="Edit" data-bind="click: $data.edit" /></td>
+                    <td><input id="deleteMeeting" type="button" class="btn btn-primary btn-medium" value="Delete" data-bind="click: $parent.remove" /></td>
+                    <!-- /ko -->
+                </tr>
+            </tbody>
+        </table>
+        <p data-bind="visible: error, text: error"></p>
+        <p data-bind="visible: !error() && meetings().length == 0">No records found.</p>
+    </div>
+    <p>
+        <input id="editAdding" type="button" class="btn btn-primary btn-medium" value="New Meeting" data-bind="enable: !adding(), click: add" />
+    </p>
+    
+    <h3>Try Urls below for example results.</h3>
+    <ul>
+        <li><a href="http://localhost:22279/odata/$metadata" target="_blank">/odata/$metadata</a></li>
+        <li><a href="/odata/Meetings" data-bind="click: function(data) { get('Meetings',data); }">/odata/Meetings</a></li>
+        <li><a href="http://localhost:22279/odata/$metadata#Meetings" target="_blank">/odata/$metadata#Meetings</a></li>
+        <li><a href="/odata/Meetings/?$select=Id,VenueName" data-bind="click: function(data) { get('Meetings/?$select=Id,VenueName', data) }">/odata/Meetings/?$select=Id,VenueName</a></li>
+        <li><a href="/odata/Meetings/?$orderby=VenueName&$skip=1&$top=2" data-bind="click: function(data) { get('Meetings/?$orderby=VenueName&$skip=1&$top=2', data) }">/odata/Meetings/?$orderby=VenueName&$skip=1&$top=2</a></li>
+        <li><a href="/odata/Meetings/?$inlinecount=allpages&$filter=NumberOfRace ge 6" data-bind="click: function(data) { get('Meetings/?$inlinecount=allpages&$filter=NumberOfRace ge 6', data) }">/odata/Meetings/?$inlinecount=allpages&$filter=NumberOfRaces ge 6</a></li>
+        <li><a href="/odata/Meetings/?$expand=Coverages">/odata/Meetings/?$expand=Coverages</a></li>
+        @*<li><a href="/odata/Meetings/?$expand=Coverages&$select=Id,VenueName,Coverages/String">/odata/Product/?$expand=Coverages&$select=ProductID,ProductName,Coverages/String</a></li>
+        <li><a href="/odata/Meetings/?$inlinecount=allpages&$orderby=ProductName&$skip=1&$top=2&$expand=Category&$select=ProductID,ProductName,Category/CategoryID,Category/CategoryName">/odata/Product/?$inlinecount=allpages&$orderby=ProductName&$skip=1&$top=2&$expand=Category&$select=ProductID,ProductName,Category/CategoryID,Category/CategoryName</a></li>*@
+    </ul>
+    <!-- /ko -->
+</div>
+
