@@ -10,13 +10,15 @@ using System.Data.Entity.SqlServer;
 using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Data.Entity.Validation;
+using Persistence.datacontext;
+using AzureRaceDataWebAPI.Models;
 
-namespace Persistence.datacontext
+namespace AzureRaceDataWebAPI.Context
 {
-    public class RaceDataDBContext: DbContext, IDataContext
+    public class RaceDataDBContext : DbContext, IDataContext
     {
         public RaceDataDBContext()
-            : base("name=appdb")
+            : base("appdb")
         {
 
         }
@@ -82,7 +84,7 @@ namespace Persistence.datacontext
 
         public DbEntityEntry Entry(object o)
         {
-            return base.Entry(o); 
+            return base.Entry(o);
         }
 
         public IEnumerable<DbEntityValidationResult> GetValidationErrors()
@@ -105,7 +107,7 @@ namespace Persistence.datacontext
         }
     }
 
-    public class RunnerConfig : EntityTypeConfiguration<Persistence.models.Runner>
+    public class RunnerConfig : EntityTypeConfiguration<Runner>
     {
         public RunnerConfig()
         {
@@ -119,7 +121,7 @@ namespace Persistence.datacontext
         }
     }
 
-    public class PoolConfig : EntityTypeConfiguration<Persistence.models.Pool>
+    public class PoolConfig : EntityTypeConfiguration<Pool>
     {
         public PoolConfig()
         {
@@ -133,7 +135,7 @@ namespace Persistence.datacontext
         }
     }
 
-    public class RaceConfig : EntityTypeConfiguration<Persistence.models.Race>
+    public class RaceConfig : EntityTypeConfiguration<Race>
     {
         public RaceConfig()
         {
@@ -147,7 +149,7 @@ namespace Persistence.datacontext
         }
     }
 
-    public class RaceStartItemConfig : EntityTypeConfiguration<Persistence.models.RaceStartItem>
+    public class RaceStartItemConfig : EntityTypeConfiguration<RaceStartItem>
     {
         public RaceStartItemConfig()
         {
@@ -162,7 +164,7 @@ namespace Persistence.datacontext
         }
     }
 
-    public class CoverageItemConfig : EntityTypeConfiguration<Persistence.models.CoverageItem>
+    public class CoverageItemConfig : EntityTypeConfiguration<CoverageItem>
     {
         public CoverageItemConfig()
         {
@@ -177,7 +179,7 @@ namespace Persistence.datacontext
         }
     }
 
-    public class DateTimeRecordConfig : EntityTypeConfiguration<Persistence.models.DateTimeRecord>
+    public class DateTimeRecordConfig : EntityTypeConfiguration<DateTimeRecord>
     {
         public DateTimeRecordConfig()
         {
@@ -192,7 +194,7 @@ namespace Persistence.datacontext
         }
     }
 
-    public class MeetingsConfig : EntityTypeConfiguration<Persistence.models.Meeting>
+    public class MeetingsConfig : EntityTypeConfiguration<Meeting>
     {
         public MeetingsConfig()
         {

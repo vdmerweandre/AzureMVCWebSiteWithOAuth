@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Persistence.models;
+using AzureRaceDataWebAPI.Models;
+using AzureRaceDataWebAPI.UnitOfWork;
 using Persistence.datacontext;
-using Persistence.unitOfWork;
+using AzureRaceDataWebAPI.Context;
 using Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -43,7 +44,7 @@ namespace AzureRaceDataWebAPI.Tests.Repository
                 Assert.IsInstanceOfType(actual, typeof(IEnumerable<Meeting>));
                 Assert.AreEqual(2, actual.Count());
                 Assert.AreEqual(actual.FirstOrDefault().VenueName, mockmeetings.FirstOrDefault().VenueName);
-                Assert.AreEqual(actual.FirstOrDefault().NumberOfRace, mockmeetings.FirstOrDefault().NumberOfRace);
+                Assert.AreEqual(actual.FirstOrDefault().NumberOfRaces, mockmeetings.FirstOrDefault().NumberOfRaces);
                 Assert.AreEqual(actual.FirstOrDefault().Coverages.Count(), mockmeetings.FirstOrDefault().Coverages.Count());
                 Assert.AreEqual(actual.FirstOrDefault().RaceStarts.Count(), mockmeetings.FirstOrDefault().RaceStarts.Count());
             }
@@ -63,7 +64,7 @@ namespace AzureRaceDataWebAPI.Tests.Repository
                 Assert.IsInstanceOfType(actual, typeof(IEnumerable<Meeting>));
                 Assert.AreEqual(2, actual.Count());
                 Assert.AreEqual(actual.FirstOrDefault().VenueName, mockmeetings.FirstOrDefault().VenueName);
-                Assert.AreEqual(actual.FirstOrDefault().NumberOfRace, mockmeetings.FirstOrDefault().NumberOfRace);
+                Assert.AreEqual(actual.FirstOrDefault().NumberOfRaces, mockmeetings.FirstOrDefault().NumberOfRaces);
                 Assert.AreEqual(actual.FirstOrDefault().Coverages.Count(), mockmeetings.FirstOrDefault().Coverages.Count());
                 Assert.AreEqual(actual.FirstOrDefault().RaceStarts.Count(), mockmeetings.FirstOrDefault().RaceStarts.Count());
             }
@@ -173,7 +174,7 @@ namespace AzureRaceDataWebAPI.Tests.Repository
         {
             if (dbTest)
             {
-                return new DBContextBase();
+                return new RaceDataDBContext();
             }
             else
             {

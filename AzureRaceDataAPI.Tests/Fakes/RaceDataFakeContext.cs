@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Persistence.datacontext;
-using Persistence.models;
+using AzureRaceDataWebAPI.Models;
 
 namespace AzureRaceDataWebAPI.Tests.Fakes
 {

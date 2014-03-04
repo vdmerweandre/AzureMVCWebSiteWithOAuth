@@ -3,8 +3,9 @@ using System.Web.Http;
 using Unity.WebApi;
 using Logging;
 using Persistence.repositories;
-using Persistence.unitOfWork;
-using Persistence.models;
+using AzureRaceDataWebAPI.UnitOfWork;
+using AzureRaceDataWebAPI.Models;
+using AzureRaceDataWebAPI.Context;
 using Persistence.datacontext;
 
 namespace AzureRaceDataWebAPI
@@ -20,7 +21,7 @@ namespace AzureRaceDataWebAPI
             
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterInstance<ILogger>(new Logger(), new ContainerControlledLifetimeManager());
-            container.RegisterType<IDataContext, DBContextBase>(new TransientLifetimeManager());
+            container.RegisterType<IDataContext, RaceDataDBContext>(new TransientLifetimeManager());
             container.RegisterType<IRaceDataUnitOfWork, RaceDataUnitOfWork>(new TransientLifetimeManager());
             
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);

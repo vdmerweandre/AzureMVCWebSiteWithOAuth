@@ -6,7 +6,7 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http.OData.Builder;
-using Persistence.models;
+using AzureRaceDataWebAPI.Models;
 
 namespace AzureRaceDataWebAPI
 {

@@ -11,10 +11,9 @@ using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using System.Web.Http.OData;
 using System.Web.Http.OData.Routing;
-using Persistence.models;
-using Persistence.datacontext;
+using AzureRaceDataWebAPI.Models;
 using Logging;
-using Persistence.unitOfWork;
+using AzureRaceDataWebAPI.UnitOfWork;
 using System.Web.Http.Cors;
 
 namespace AzureRaceDataWebAPI.Controllers
@@ -29,11 +28,7 @@ namespace AzureRaceDataWebAPI.Controllers
     config.Routes.MapODataRoute("odata", "odata", builder.GetEdmModel());
     */
 
-    //AsyncEntitySetController
-    //http://msdn.microsoft.com/en-us/library/jj890498(v=vs.111).aspx
-    //http://localhost:22279/odata/Meetings()?$expand=RaceStarts,Coverages&$top=1
-
-    [EnableCors(origins: "http://localhost:6435", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://azurespawithoauth.azurewebsites.net", headers: "*", methods: "*")]
     public class MeetingsController : ODataController
     {
         private IRaceDataUnitOfWork _uow;

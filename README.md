@@ -40,6 +40,7 @@ http://msdn.microsoft.com/en-au/data/dn468673
 
 DBMigrations
 http://elegantcode.com/2012/04/12/entity-framework-migrations-tips/
+http://msdn.microsoft.com/en-us/data/jj591621.aspx
 
 Unity & LifetimeManagers
 http://jankowskigrzegorz.blogspot.com.au/2013/06/microsoft-unity-perresolvelifetimemanag.html
@@ -54,3 +55,7 @@ Ko performance tips
 http://www.knockmeout.net/2012/03/knockoutjs-performance-gotcha-1ifwith.html
 
 HATEOAS
+
+Deploy to Azure
+1) Download the Azure account publish settings: https://manage.windowsazure.com/publishsettings/Index?client=vs&SchemaVersion=1.0
+2)

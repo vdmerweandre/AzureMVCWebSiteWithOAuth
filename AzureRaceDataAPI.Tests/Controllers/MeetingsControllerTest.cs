@@ -13,10 +13,11 @@ using System.Threading.Tasks;
 using System.Web.Http.OData.Results;
 using System.Web.Http.OData;
 using System.Net;
-using Persistence.models;
+using AzureRaceDataWebAPI.Models;
 using Persistence.datacontext;
-using Persistence.unitOfWork;
+using AzureRaceDataWebAPI.UnitOfWork;
 using Logging;
+using AzureRaceDataWebAPI.Context;
 
 namespace AzureRaceDataWebAPI.Tests.Controllers
 {
@@ -60,11 +61,11 @@ namespace AzureRaceDataWebAPI.Tests.Controllers
                 Assert.IsNotNull(actual, "A response equal to null is unexpected!");
                 Assert.AreEqual(2, actual.Content.Count());
                 Assert.AreEqual(actual.Content.ElementAt(0).VenueName, mock1.VenueName);
-                Assert.AreEqual(actual.Content.ElementAt(0).NumberOfRace, mock1.NumberOfRace);
+                Assert.AreEqual(actual.Content.ElementAt(0).NumberOfRaces, mock1.NumberOfRaces);
                 Assert.AreEqual(actual.Content.ElementAt(0).Coverages.Count(), mock1.Coverages.Count());
                 Assert.AreEqual(actual.Content.ElementAt(0).RaceStarts.Count(), mock1.RaceStarts.Count());
                 Assert.AreEqual(actual.Content.ElementAt(1).VenueName, mock2.VenueName);
-                Assert.AreEqual(actual.Content.ElementAt(1).NumberOfRace, mock2.NumberOfRace);
+                Assert.AreEqual(actual.Content.ElementAt(1).NumberOfRaces, mock2.NumberOfRaces);
                 Assert.AreEqual(actual.Content.ElementAt(1).Coverages.Count(), mock2.Coverages.Count());
                 Assert.AreEqual(actual.Content.ElementAt(1).RaceStarts.Count(), mock2.RaceStarts.Count());
             }
@@ -97,7 +98,7 @@ namespace AzureRaceDataWebAPI.Tests.Controllers
                 // Assert
                 Assert.IsNotNull(actual, "A response equal to null is unexpected!");
                 Assert.AreEqual(actual.Content.ElementAt(0).VenueName, mock.VenueName);
-                Assert.AreEqual(actual.Content.ElementAt(0).NumberOfRace, mock.NumberOfRace);
+                Assert.AreEqual(actual.Content.ElementAt(0).NumberOfRaces, mock.NumberOfRaces);
                 Assert.AreEqual(actual.Content.ElementAt(0).Coverages.Count(), mock.Coverages.Count());
                 Assert.AreEqual(actual.Content.ElementAt(0).RaceStarts.Count(), mock.RaceStarts.Count());
             }
@@ -158,7 +159,7 @@ namespace AzureRaceDataWebAPI.Tests.Controllers
                 //Assert
                 Assert.IsNotNull(actual, "A response equal to null is unexpected!");
                 Assert.AreEqual(actual.Entity.VenueName, expected.VenueName);
-                Assert.AreEqual(actual.Entity.NumberOfRace, expected.NumberOfRace);
+                Assert.AreEqual(actual.Entity.NumberOfRaces, expected.NumberOfRaces);
                 Assert.AreEqual(actual.Entity.Coverages.Count(), expected.Coverages.Count());
                 Assert.AreEqual(actual.Entity.RaceStarts.Count(), expected.RaceStarts.Count());  
             }
@@ -195,7 +196,7 @@ namespace AzureRaceDataWebAPI.Tests.Controllers
                 // Assert
                 Assert.IsNotNull(actual, "A response equal to null is unexpected!");
                 Assert.AreEqual(actual.Entity.VenueName, expected.VenueName);
-                Assert.AreEqual(actual.Entity.NumberOfRace, expected.NumberOfRace);
+                Assert.AreEqual(actual.Entity.NumberOfRaces, expected.NumberOfRaces);
                 Assert.AreEqual(actual.Entity.Coverages.Count(), expected.Coverages.Count());
                 Assert.AreEqual(actual.Entity.RaceStarts.Count(), expected.RaceStarts.Count());
             }
@@ -255,7 +256,7 @@ namespace AzureRaceDataWebAPI.Tests.Controllers
         {
             if (dbTest)
             {
-                return new DBContextBase();
+                return new RaceDataDBContext();
             }
             else
             {

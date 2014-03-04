@@ -1,5 +1,5 @@
 ﻿// DataContext
-var meetingApiUrl = 'http://localhost:22279/odata/';
+var meetingApiUrl = 'http://azureracedatawebapi.azurewebsites.net/odata';
 var dataContext = {
 
     get: function (uri, meetingsObservable, errorObservable) {

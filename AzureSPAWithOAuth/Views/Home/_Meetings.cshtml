@@ -27,7 +27,7 @@
                     <td><input type="text" size="20" data-bind="value: VenueName" /></td>
                     <td><input type="text" size="20" id="datepicker" data-bind="value: Date" /></td>
                     <td><input type="text" size="3" data-bind="value: RGB" /></td>
-                    <td><input type="number" width="3" min="1" max="999" data-bind="value: NumberOfRace" /></td>
+                    <td><input type="number" width="3" min="1" max="999" data-bind="value: NumberOfRaces" /></td>
                     <td><input type="text" size="3" data-bind="value: TabcorpReqCode" /></td>
                     <td><input type="text" size="3" data-bind="value: TabcorpDispCode" /></td>
                     <td><input type="text" size="3" data-bind="value: TabLtdReqCode" /></td>
@@ -48,7 +48,7 @@
                     <td><span data-bind="text: VenueName"></span></td>
                     <td><span data-bind="text: Date"></span></td>
                     <td><span data-bind="text: RGB"></span></td>
-                    <td><span data-bind="text: NumberOfRace"></span></td>
+                    <td><span data-bind="text: NumberOfRaces"></span></td>
                     <td><span data-bind="text: TabcorpReqCode"></span></td>
                     <td><span data-bind="text: TabcorpDispCode"></span></td>
                     <td><span data-bind="text: TabLtdReqCode"></span></td>
@@ -70,12 +70,12 @@
     
     <h3>Try Urls below for example results.</h3>
     <ul>
-        <li><a href="http://localhost:22279/odata/$metadata" target="_blank">/odata/$metadata</a></li>
+        <li><a href="http://azureracedatawebapi.azurewebsites.net/odata/$metadata" target="_blank">/odata/$metadata</a></li>
         <li><a href="/odata/Meetings" data-bind="click: function(data) { get('Meetings',data); }">/odata/Meetings</a></li>
-        <li><a href="http://localhost:22279/odata/$metadata#Meetings" target="_blank">/odata/$metadata#Meetings</a></li>
+        <li><a href="http://azureracedatawebapi.azurewebsites.net/odata/$metadata#Meetings" target="_blank">/odata/$metadata#Meetings</a></li>
         <li><a href="/odata/Meetings/?$select=Id,VenueName" data-bind="click: function(data) { get('Meetings/?$select=Id,VenueName', data) }">/odata/Meetings/?$select=Id,VenueName</a></li>
         <li><a href="/odata/Meetings/?$orderby=VenueName&$skip=1&$top=2" data-bind="click: function(data) { get('Meetings/?$orderby=VenueName&$skip=1&$top=2', data) }">/odata/Meetings/?$orderby=VenueName&$skip=1&$top=2</a></li>
-        <li><a href="/odata/Meetings/?$inlinecount=allpages&$filter=NumberOfRace ge 6" data-bind="click: function(data) { get('Meetings/?$inlinecount=allpages&$filter=NumberOfRace ge 6', data) }">/odata/Meetings/?$inlinecount=allpages&$filter=NumberOfRaces ge 6</a></li>
+        <li><a href="/odata/Meetings/?$inlinecount=allpages&$filter=NumberOfRaces ge 6" data-bind="click: function(data) { get('Meetings/?$inlinecount=allpages&$filter=NumberOfRace ge 6', data) }">/odata/Meetings/?$inlinecount=allpages&$filter=NumberOfRaces ge 6</a></li>
         <li><a href="/odata/Meetings/?$expand=Coverages">/odata/Meetings/?$expand=Coverages</a></li>
         @*<li><a href="/odata/Meetings/?$expand=Coverages&$select=Id,VenueName,Coverages/String">/odata/Product/?$expand=Coverages&$select=ProductID,ProductName,Coverages/String</a></li>
         <li><a href="/odata/Meetings/?$inlinecount=allpages&$orderby=ProductName&$skip=1&$top=2&$expand=Category&$select=ProductID,ProductName,Category/CategoryID,Category/CategoryName">/odata/Product/?$inlinecount=allpages&$orderby=ProductName&$skip=1&$top=2&$expand=Category&$select=ProductID,ProductName,Category/CategoryID,Category/CategoryName</a></li>*@

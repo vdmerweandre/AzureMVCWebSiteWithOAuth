@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Persistence.models;
+using AzureRaceDataWebAPI.Models;
 
 namespace AzureRaceDataWebAPI.Tests
 {
@@ -26,14 +26,14 @@ namespace AzureRaceDataWebAPI.Tests
 
         private void CreateMeetings()
         {
-            meetings = new List<Persistence.models.Meeting>()
+            meetings = new List<Meeting>()
             {
-                new Persistence.models.Meeting()
+                new Meeting()
                         {
                             Id = 0,
                             VenueName = "FLEMINGTON",
                             RGB = 'R',
-                            NumberOfRace = 9,
+                            NumberOfRaces = 9,
                             Date = new DateTime(2003,03,15),
                             TabcorpReqCode = "MR",
                             TabcorpDispCode = "MEL R",
@@ -41,25 +41,25 @@ namespace AzureRaceDataWebAPI.Tests
                             TabLtdReqDispCode = "MR",
                             UniTABReqCode = "MR",
                             UniTABReqDispCode = "MR",
-                            RaceStarts = new List<DateTimeRecord>()
+                            RaceStarts = new List<RaceStartItem>()
                             {
-                                new DateTimeRecord() { DateTime = new DateTime(2003,03,15,12,25,00)},
-                                new DateTimeRecord() { DateTime = new DateTime(2003,03,15,13,05,00)},
-                                new DateTimeRecord() { DateTime = new DateTime(2003,03,15,13,45,00)}
+                                new RaceStartItem() { DateTime = new DateTime(2003,03,15,12,25,00)},
+                                new RaceStartItem() { DateTime = new DateTime(2003,03,15,13,05,00)},
+                                new RaceStartItem() { DateTime = new DateTime(2003,03,15,13,45,00)}
                             },
-                            Coverages = new List<StringRecord>()
+                            Coverages = new List<CoverageItem>()
                             {
-                                new StringRecord() { String = "VNQ"},
-                                new StringRecord() { String = "VNU"},
-                                new StringRecord() { String = "VNU"}
+                                new CoverageItem() { String = "VNQ"},
+                                new CoverageItem() { String = "VNU"},
+                                new CoverageItem() { String = "VNU"}
                             }
                         },
-                    new Persistence.models.Meeting()
+                    new Meeting()
                         {
                             Id = 1,
                             VenueName = "GOLD COAST",
                             RGB = 'R',
-                            NumberOfRace = 8,
+                            NumberOfRaces = 8,
                             Date = new DateTime(2003,03,15),
                             TabcorpReqCode = "3R",
                             TabcorpDispCode = "P2 R",
@@ -67,17 +67,17 @@ namespace AzureRaceDataWebAPI.Tests
                             TabLtdReqDispCode = "CR",
                             UniTABReqCode = "QR",
                             UniTABReqDispCode = "QR",
-                            RaceStarts = new List<DateTimeRecord>()
+                            RaceStarts = new List<RaceStartItem>()
                             {
-                                new DateTimeRecord() { DateTime = new DateTime(2003,03,15,15,25,00)},
-                                new DateTimeRecord() { DateTime = new DateTime(2003,03,15,16,05,00)},
-                                new DateTimeRecord() { DateTime = new DateTime(2003,03,15,16,45,00)}
+                                new RaceStartItem() { DateTime = new DateTime(2003,03,15,15,25,00)},
+                                new RaceStartItem() { DateTime = new DateTime(2003,03,15,16,05,00)},
+                                new RaceStartItem() { DateTime = new DateTime(2003,03,15,16,45,00)}
                             },
-                            Coverages = new List<StringRecord>()
+                            Coverages = new List<CoverageItem>()
                             {
-                                new StringRecord() { String = "VNQ"},
-                                new StringRecord() { String = "VNU"},
-                                new StringRecord() { String = "VNU"}
+                                new CoverageItem() { String = "VNQ"},
+                                new CoverageItem() { String = "VNU"},
+                                new CoverageItem() { String = "VNU"}
                             }
                         }
                 };

@@ -28,7 +28,7 @@ function Meeting(data) {
     self.Id = data.Id || '';
     self.VenueName = ko.observable(data.VenueName).store();
     self.RGB = ko.observable(data.RGB).store();
-    self.NumberOfRace = ko.observable(data.NumberOfRace).store();
+    self.NumberOfRaces = ko.observable(data.NumberOfRaces).store();
     self.Date = ko.observable(data.Date).store();
     self.TabcorpReqCode = ko.observable(data.TabcorpReqCode).store();
     self.TabcorpDispCode = ko.observable(data.TabcorpDispCode).store();
